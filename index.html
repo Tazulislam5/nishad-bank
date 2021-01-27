@@ -12,13 +12,72 @@
   <div id="login-area">
     <h1 class="text-center">Welcome To Nishad Bank</h1>  
 
-    <div id="submit-area">
+    <div class="submit-area">
         <input type="text" placeholder="Email" class="form-control">
         <br>
         <input type="password" name="" id="" placeholder="password" class="form-control">
         <br>
-        <button class="btn btn-success">Enter</button>
+        <button id="btnLogin" class="btn btn-success">Enter</button>
     </div>
   </div>
+  <div id="transaction-area">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="deposit status">
+          <h2>Deposit</h2>
+          <h5>$00</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="withdraw status">
+          <h2>Withdraw</h2>
+          <h5>$00</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="balance status">
+          <h2>Balance</h2>
+          <h5>$1240</h5>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="submit-area">
+          <h3>Deposit</h3>
+          <input id="depositAmount" type="text" placeholder="$amount you want to deposit"class="form-control">
+          <br>
+          <button id="depositBtn" class="btn btn-success">Deposit</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="submit-area">
+          <h3>Withdraw</h3>
+          <input type="text" placeholder="$amount you want to withdraw" class="form-control">
+          <br>
+          <button class="btn btn-success">Withdraw</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    //Login button eventHandler
+    const buttonLogin = document.getElementById('btnLogin');
+    buttonLogin.addEventListener('click',function(){
+      var loginArea = document.getElementById('login-area');
+      loginArea.style.display = 'none';
+      const transactionArea = document.getElementById('transaction-area');
+      transactionArea.style.display = 'block';
+    })
+    //deposit button event Handler
+    const depositButton = document.getElementById('depositBtn');
+    depositButton.addEventListener('click', function(){
+      const depositAmount = document.getElementById('depositAmount').value;
+      const depositNumber = parseFloat(depositAmount);
+
+    })
+      
+   
+  </script>
 </body>
 </html>
